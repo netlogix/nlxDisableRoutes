@@ -47,24 +47,25 @@ class ControllerInterruptor implements SubscriberInterface
         $subject = $eventArgs->getSubject();
         $eventName = $subject->Front()->Dispatcher()->getFullActionName($eventArgs->getRequest());
 
-        if (false === empty($eventName) && $this->shouldInterrupt($eventName)) {
-            $action = $this->pluginConfig['rejectAction'];
+        if (empty($eventName) || $this->shouldInterrupt($eventName)) {
+            return;
+        }
+        $action = $this->pluginConfig['rejectAction'];
 
-            $this->logger->debug('Interrupted access to ' . $eventName);
+        $this->logger->debug('Interrupted access to ' . $eventName);
 
-            switch ($action) {
-                case 'redirectHome':
-                    $subject->redirect($eventArgs->getRequest()->getBaseUrl());
-                    break;
-                case 'genericError':
-                    $subject->forward('genericError', 'Error', 'Frontend');
-                    break;
-                case 'throwException':
-                    // Do throw an exception as default, so "fall through":
-                default:
-                    throw new \RuntimeException();
-                    break;
-            }
+        switch ($action) {
+            case 'redirectHome':
+                $subject->redirect($eventArgs->getRequest()->getBaseUrl());
+                break;
+            case 'genericError':
+                $subject->forward('genericError', 'Error', 'Frontend');
+                break;
+            case 'throwException':
+                // Do throw an exception as default, so "fall through":
+            default:
+                throw new \RuntimeException();
+                break;
         }
     }
 
