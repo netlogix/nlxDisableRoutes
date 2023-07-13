@@ -1,0 +1,6 @@
+suites:
+  default:
+    namespace: nlxDisableRoutes
+    psr4_prefix: nlxDisableRoutes
+    spec_path: ./
+    src_path: ./

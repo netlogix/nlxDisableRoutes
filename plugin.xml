@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label lang="de">nlxDisableRoutes</label>
+    <label lang="en">nlxDisableRoutes</label>
+    <version>3.0.0</version>
+    <copyright>(c) by netlogix GmbH &amp; Co. KG</copyright>
+    <license>Proprietary</license>
+    <link>https://websolutions.netlogix.de/</link>
+    <author>netlogix GmbH &amp; Co. KG</author>
+
+    <compatibility minVersion="5.6.0" />
+
+    <changelog version="1.0.0">
+        <changes lang="de">Erste Veröffentlichung</changes>
+        <changes lang="en">Initial Release</changes>
+    </changelog>
+    <changelog version="2.0.0">
+        <changes lang="de">Shopware 5.7.x Support und Umbau der CI Pipeline</changes>
+        <changes lang="en">Shopware 5.7.x support and changes in the CI pipeline</changes>
+    </changelog>
+    <changelog version="2.1.0">
+        <changes lang="de">Shopware Version 5.7.5 für PHP8 Support</changes>
+        <changes lang="en">Shopware version 5.7.5 for PHP8 support</changes>
+    </changelog>
+    <changelog version="3.0.0">
+        <changes lang="de">Umzug zu github</changes>
+        <changes lang="en">Moved to github</changes>
+    </changelog>
+</plugin>

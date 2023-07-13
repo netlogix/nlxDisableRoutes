@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element type="text">
+            <name>disabledControllerActions</name>
+            <label lang="de">deaktivierte Controller-Actions</label>
+            <label lang="en">disabled controller actions</label>
+            <value />
+            <description lang="de">Kommagetrennt, Beispiel: Frontend_Account_Profile,Frontend_Account_Downloads</description>
+            <description lang="en">Comma separated, example: Frontend_Account_Profile,Frontend_Account_Downloads</description>
+        </element>
+
+        <element required="true" type="select">
+            <name>rejectAction</name>
+            <label lang="de">Aktion</label>
+            <label lang="en">Action</label>
+            <value>genericError</value>
+            <description lang="de">Aktion, die durchgeführt werden soll, wenn der Zugriff zu einer der Aktionen oben verweigert wird</description>
+            <description lang="en">The action that should be taken if access to one of the actions configured above is rejected.</description>
+            <store>
+                <option>
+                    <value>redirectHome</value>
+                    <label lang="de">Umleiten zur Startseite</label>
+                    <label lang="en">Redirect to homepage</label>
+                </option>
+                <option>
+                    <value>genericError</value>
+                    <label lang="de">Allgemeinen Fehler ausgeben</label>
+                    <label lang="en">Show generic error</label>
+                </option>
+                <option>
+                    <value>throwException</value>
+                    <label lang="de">Exception werfen</label>
+                    <label lang="en">Throw exception</label>
+                </option>
+            </store>
+        </element>
+    </elements>
+</config>
