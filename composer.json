@@ -1,0 +1,37 @@
+{
+    "name": "netlogix/nlxdisableroutes",
+    "description": "Allows to disable routes of a Shopware 5 shop.",
+    "type": "shopware-plugin",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "netlogix GmbH & Co. KG",
+            "email": "websolutions@netlogix.de"
+        }
+    ],
+    "extra": {
+        "installer-name": "nlxDisableRoutes"
+    },
+    "autoload": {
+        "psr-4": {
+            "nlxDisableRoutes\\": "."
+        }
+    },
+    "require": {
+        "php": "^7.2||^8.0"
+    },
+    "require-dev": {
+        "shopware/shopware": "^5.6",
+        "solutiondrive/standalone-build-tools": "^2.0"
+    },
+    "config": {
+        "sort-packages": true,
+        "standalone-build-tools": {
+            "phpspec-standalone.php7.4.phar": "http://build-tools.cloud.solutiondrive.de/phar/phpspec-standalone.php7.4.phar",
+            "phpspec-standalone.php7.3.phar": "http://build-tools.cloud.solutiondrive.de/phar/phpspec-standalone.php7.3.phar",
+            "phpspec-standalone.php7.2.phar": "http://build-tools.cloud.solutiondrive.de/phar/phpspec-standalone.php7.2.phar",
+            "ecs-standalone.phar": "http://build-tools.cloud.solutiondrive.de/phar/coding-standard-standalone.ecs.php7.2.phar",
+            "easy-coding-standard.yml": "http://build-tools.cloud.solutiondrive.de/phar/easy-coding-standard-php7.2.yml"
+        }
+    }
+}

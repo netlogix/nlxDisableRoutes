@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="nlx.disable_routes.plugin_config" class="Shopware\Components\Plugin\CachedConfigReader">
+            <factory service="shopware.plugin.cached_config_reader" method="getByPluginName"/>
+            <argument type="string">nlxDisableRoutes</argument>
+        </service>
+
+        <service
+                id="nlx.disable_routes.subscriber.controller_interruptor"
+                class="nlxDisableRoutes\Subscriber\ControllerInterruptor"
+        >
+            <tag name="shopware.event_subscriber" />
+            <argument type="service" id="nlx.disable_routes.plugin_config" />
+            <argument type="service" id="pluginlogger" />
+        </service>
+    </services>
+</container>
