@@ -47,7 +47,7 @@ class ControllerInterruptor implements SubscriberInterface
         $subject = $eventArgs->getSubject();
         $eventName = $subject->Front()->Dispatcher()->getFullActionName($eventArgs->getRequest());
 
-        if (empty($eventName) || $this->shouldInterrupt($eventName)) {
+        if (empty($eventName) || false === $this->shouldInterrupt($eventName)) {
             return;
         }
         $action = $this->pluginConfig['rejectAction'];
